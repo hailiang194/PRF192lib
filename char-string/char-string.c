@@ -85,3 +85,26 @@ int * fChar(char *s)
 
 	return f;
 }
+
+char * strWord(char *s, char *subStr)
+{
+	char * locate = strstr(s, subStr);
+	
+	size_t subLen = strlen(subStr);
+	
+	while(TRUE)
+	{
+			if(locate == NULL)
+				return NULL;
+			
+			//check if this location is a word or not
+			//check the left side	
+			if(((locate == s) || (isspace(locate[-1]))) 
+				//check the right side
+				&&(locate[subLen] == '\0' || isspace(locate[subLen])))
+				return locate;
+			
+			locate = strstr(locate + 1, subStr);
+	}
+	
+}

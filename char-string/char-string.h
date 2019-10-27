@@ -25,4 +25,7 @@ char * strReverse(char *s);
 //get frequencies of all printable character in s
 int * fChar(char *s);
 
+//return the first word that is subStr
+char * strWord(char *s, char *subStr);
+
 #endif
