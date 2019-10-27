@@ -11,6 +11,6 @@
 
 //string constant
 #define NUM_PRINTABLE_CHAR 95
-#define START_PRINTABLE_CHAR 35
+#define START_PRINTABLE_CHAR 32
 
 #endif
