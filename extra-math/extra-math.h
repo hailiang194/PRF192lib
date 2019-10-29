@@ -39,4 +39,7 @@ int isSquareNum(int n);
 //calculate sum of all digits of an integer number
 int sumDigit(int n);
 
+//summation of many similar terms
+double sigmaSum(int lower, int upper, double(*func)(int));
+
 #endif

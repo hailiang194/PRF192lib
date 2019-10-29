@@ -147,3 +147,15 @@ int sumDigit(int n)
 
 	return sum;
 }
+
+double sigmaSum(int lower, int upper, double(*func)(int))
+{
+	double sum = 0.0;
+
+	for(int i = lower; i <= upper; i++)
+	{
+		sum += (*func)(i);
+	}
+
+	return sum;
+}
