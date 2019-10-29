@@ -28,4 +28,6 @@ int * fChar(char *s);
 //return the first word that is subStr
 char * strWord(char *s, char *subStr);
 
+//decrypt plain and store in cipher using Caesar cipher
+void caesarCipher(char *plain, char *cipher, int key);
 #endif

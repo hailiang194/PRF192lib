@@ -71,16 +71,16 @@ char * strReverse(char *s)
 
 int * fChar(char *s)
 {
-	int *f = (int *)malloc(95 * sizeof(int));
+	int *f = (int *)malloc(NUM_PRINTABLE_CHAR * sizeof(int));
 
-	for(int i = 0; i < 95; i++)
+	for(int i = 0; i < NUM_PRINTABLE_CHAR; i++)
 	{
 		f[i] = 0;
 	}
 
 	for(char *c = s; (*c) != '\0'; c++)
 	{
-		f[(*c) - 32] ++;
+		f[(*c) - START_PRINTABLE_CHAR] ++;
 	}
 
 	return f;
@@ -107,4 +107,17 @@ char * strWord(char *s, char *subStr)
 			locate = strstr(locate + 1, subStr);
 	}
 	
+}
+
+void caesarCipher(char *plain, char *cipher, int key)
+{
+	strcpy(cipher, plain);
+
+	for(char *c = cipher; (*c) != '\0'; c++)
+	{
+		if(islower(*c))
+			*c = ((*c) - 'a' + key) % 26 + 'a';
+		else if(isupper(*c))
+			*c = ((*c) - 'A' + key) % 26 + 'A';
+	}
 }
