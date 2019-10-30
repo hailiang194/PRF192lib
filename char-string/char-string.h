@@ -30,4 +30,10 @@ char * strWord(char *s, char *subStr);
 
 //decrypt plain and store in cipher using Caesar cipher
 void caesarCipher(char *plain, char *cipher, int key);
+
+//get the longest word
+char * getMaxLenWord(char *s);
+
+//get the pos_th word in s
+char *getWordAt(char *s, size_t pos);
 #endif

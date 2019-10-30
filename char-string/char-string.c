@@ -121,3 +121,37 @@ void caesarCipher(char *plain, char *cipher, int key)
 			*c = ((*c) - 'A' + key) % 26 + 'A';
 	}
 }
+
+char * getMaxLenWord(char *s)
+{
+	char *word = strtok(s, WORD_DELIMITERS);
+	size_t maxWordLen = strlen(word);
+	char * wordMaxLen = word;
+	
+	while(word != NULL)
+	{
+		size_t currentWordLen = strlen(word);
+		if(currentWordLen > maxWordLen)
+		{
+			wordMaxLen = word;
+			maxWordLen = currentWordLen;
+		}
+		
+		
+		word = strtok(NULL, WORD_DELIMITERS);
+	}
+	
+	return wordMaxLen;
+}
+
+char *getWordAt(char *s, size_t pos)
+{
+	char *word = strtok(s, WORD_DELIMITERS);
+
+	for(int i = 0; i < pos; i++)
+	{
+		word = strtok(NULL, WORD_DELIMITERS);
+	}
+
+	return word;
+}
