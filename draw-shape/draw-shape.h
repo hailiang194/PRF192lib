@@ -41,6 +41,10 @@ int isStarInFillPyramid(int x, int y, int col, int row);
 //check if (x, y) is the location to print the star for unfill pyramid
 int isStarInUnfillPyramid(int x, int y, int col, int row);
 
+int isStarInUnfillInvertPyramid(int x, int y, int col, int row);
+
+int isStarInFillInvertPyramid(int x, int y, int col, int row);
+
 //draw the shape using '*' base on the condition of isStar
 void drawShape(int row, int col, int(*isStar)(int, int, int, int));
 #endif

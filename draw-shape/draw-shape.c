@@ -60,6 +60,16 @@ int isStarInUnfillPyramid(int x, int y, int col, int row)
 	return ((abs(x + 1 - col / 2) == y ) || (y == row - 1) && !((x == col - 1) && (y = row - 1)));
 }
 
+int isStarInUnfillInvertPyramid(int x, int y, int col, int row)
+{
+	return ((-abs(x + 1 - col / 2) == y - row + 1) || (y == 0) && !((x == col - 1) && (y = row - 1)));
+}
+
+int isStarInFillInvertPyramid(int x, int y, int col, int row)
+{
+	return ((-abs(x + 1 - col / 2) >= y - row + 1));
+}
+
 void drawShape(int row, int col, int(*isStar)(int, int, int , int))
 {
 	for(int y = 0; y < row; y++)
