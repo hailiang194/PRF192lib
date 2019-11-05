@@ -8,11 +8,9 @@
 #include "..\constant.h"
 
 //return x ^ y with x and y are integer
-//return -1 if overflow
 int powInt(int x, int y);
 
 //return n!
-//return -1 if overflow
 int fact(int n);
 
 //return the value of n choose k

@@ -7,9 +7,6 @@ int powInt(int x, int y)
     for(i = 1; i <= y; i++) 
     {
         s = s * x;
-
-        if(s <= 0)
-        	return -1;
     }
         
     return s;
@@ -22,9 +19,6 @@ int fact(int n)
 	for(i = 2; i <= n; i++)
 	{
 		product *= i;
-
-		if(product < 0)
-			return -1;
 	}
 
 	return product;
