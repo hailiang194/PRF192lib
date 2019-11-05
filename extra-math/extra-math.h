@@ -36,6 +36,9 @@ int isPrime(int n);
 //check if n is square number
 int isSquareNum(int n);
 
+//check if n is perfect number or not
+int isPerfectNumber(int n);
+
 //calculate sum of all digits of an integer number
 int sumDigit(int n);
 

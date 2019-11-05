@@ -31,12 +31,11 @@ int fact(int n)
 }
 
 int nCk(int n, int k)
-{
-
-	int fracN = 1, fracK = 1, fracNMinusK = 1, i = 1;
-
+{	
 	if(n < k)
 		return 0;
+
+	int fracN = 1, fracK = 1, fracNMinusK = 1, i = 1;
 
 	/* we have k <= n and (n - k) <= n
 	 * that mean k! <= n! and (n - k)! <= n!
@@ -131,6 +130,27 @@ int nextPrime(int n)
 		if(isPrime(i))
 			return i;
 	}  
+}
+
+int isPerfectNumber(int n)
+{
+	/*
+	 * Because if a factor is greater than the square root of n,
+	 * the other factor that would multiply with it to equal n is less than the square root of n
+	 * DivSum = 1 because 1 is alway a division of n
+	 */
+	int DivSum = 1;
+	
+	for(int i = 2; i <= sqrt(n); i++)
+	{
+		if(n % i == 0)
+		{
+			DivSum += i;
+			DivSum += (n / i);
+		}
+	}
+	
+	return (DivSum == n);
 }
 
 int sumDigit(int n)
