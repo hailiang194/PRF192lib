@@ -166,3 +166,24 @@ int * sievePrime(int n)
 
 	return isPrime;
 }
+
+int *unique(int *a, const int n, int *uniLeng)
+{
+	sort(a, n);
+	
+	(*uniLeng) = 0;
+	
+	int *uniValue = (int *)calloc((*uniLeng), sizeof(int));
+	
+	uniValue[(*uniLeng)++] = a[0];
+	
+	for(int i = 1; i < n; i++)
+	{
+		if(a[i - 1] != a[i])
+			uniValue[(*uniLeng)++] = a[i];
+	}
+	
+	uniValue = (int *)realloc(uniValue, (*uniLeng) * sizeof(int));
+	
+	return uniValue;
+}

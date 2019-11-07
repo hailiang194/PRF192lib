@@ -51,4 +51,8 @@ void reverse(int *a, int n);
 //else i is prime number
 int * sievePrime(int n);
 
+//get all unique integers in a 
+//the quantity of unique is stored in uniLeng
+int *unique(int *a, const int n, int *uniLeng);
+
 #endif
